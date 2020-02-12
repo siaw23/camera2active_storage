@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dob: 2020-02-12
+  pob: MyString
+  age: 1
+  height: 1.5
+  citizenship: MyString
+  position: MyString
+  foot: MyString
+  current_club: MyString
+  contract_expires: 2020-02-12
+  outfitter: MyString
+
+two:
+  dob: 2020-02-12
+  pob: MyString
+  age: 1
+  height: 1.5
+  citizenship: MyString
+  position: MyString
+  foot: MyString
+  current_club: MyString
+  contract_expires: 2020-02-12
+  outfitter: MyString

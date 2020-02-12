@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Birthdate</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Citizenship</th>
+      <th>Position</th>
+      <th>Foot</th>
+      <th>Club</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.dob %></td>
+        <td><%= Time.now.year - player.dob.year %></td>
+        <td><%= heightilize(player.height) %></td>
+        <td><%= player.citizenship %></td>
+        <td><%= player.position %></td>
+        <td><%= player.foot %></td>
+        <td><%= player.current_club %></td>
+        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if false %>
+  <%= link_to 'New Player', new_player_path, class: "btn btn-primary ml-4" %>
+<% end %>
+

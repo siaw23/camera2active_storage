@@ -1,0 +1,49 @@
+<%= form_with(model: player, local: true) do |form| %>
+  <% if player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+        <% player.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-6">
+    <%= form.label :pob %>
+    <%= form.text_field :pob, class: "form-control" %>
+  </div>
+
+
+
+  <div class="form-group col-6">
+    <%= form.label :height %>
+    <%= form.text_field :height, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :citizenship %>
+    <%= form.text_field :citizenship, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :position %>
+    <%= form.text_field :position, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :foot %>
+    <%= form.text_field :foot, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :current_club %>
+    <%= form.text_field :current_club, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
