@@ -57,7 +57,6 @@ document.addEventListener("turbolinks:load", function () {
         videdDiv.style.display = "none"
         snapButton.style.display = "none"
       }
-
     }
   }
 })
