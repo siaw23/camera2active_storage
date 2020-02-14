@@ -12,15 +12,25 @@
   <% end %>
 
   <div class="ml-4 mb-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=animal-pet-cute-kitten-45201.jpg&fm=jpg" alt="">
+    <div class="row">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="" alt="" id="shot">
+      </div>
+
+      <div class="card ml-2" style="width: 18rem;" id="viewfinder">
+        <video width="288" height="301" autoplay class=""></video>
+      </div>
+
     </div>
 
+
     <div class="mt-2">
-      <button type="button" class="btn btn-dark btn-sm">Change Picture</button>
-      <button type="button" class="btn btn-dark btn-sm">Snap</button>
+      <button type="button" class="btn btn-dark btn-sm" id="change_picture">Change Picture</button>
+      <button type="button" class="btn btn-dark btn-sm" id="snap">Snap</button>
     </div>
   </div>
+
+
 
   <div class="form-group col-6">
     <%= form.label :pob, "Place of Birth" %>
