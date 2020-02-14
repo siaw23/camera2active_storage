@@ -14,23 +14,23 @@
   <div class="ml-4 mb-4">
     <div class="row">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="" alt="" id="shot">
+        <% if @player.picture.present? %>
+          <%= image_tag(@player.picture, class: "card-img-top", id: "shot") %>
+        <% else %>
+          <img class="card-img-top" src="/cat.jpg" id="shot">
+        <% end %>
       </div>
 
       <div class="card ml-2" style="width: 18rem;" id="viewfinder">
         <video width="288" height="301" autoplay class=""></video>
       </div>
-
     </div>
-
 
     <div class="mt-2">
       <button type="button" class="btn btn-dark btn-sm" id="change_picture">Change Picture</button>
       <button type="button" class="btn btn-dark btn-sm" id="snap">Snap</button>
     </div>
   </div>
-
-
 
   <div class="form-group col-6">
     <%= form.label :pob, "Place of Birth" %>
@@ -65,4 +65,6 @@
   <div class="form-group col-6">
     <%= form.submit class: "btn btn-primary" %>
   </div>
+
+  <%= form.hidden_field :player_picture, value: @player.player_picture %>
 <% end %>

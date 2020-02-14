@@ -2,11 +2,16 @@
 
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=animal-pet-cute-kitten-45201.jpg&fm=jpg" alt="">
+    <% if @player.picture.present? %>
+      <%= image_tag(@player.picture, class: "card-img-top") %>
+    <% else %>
+      <img class="card-img-top" src="/cat.jpg" alt="">
+    <% end %>
+
     <div class="card-body">
       <h5 class="card-title"><%= @player.name %></h5>
-
     </div>
+
     <ul class="list-group list-group-flush">
       <li class="list-group-item">DOB: <%= @player.dob %></li>
       <li class="list-group-item">Age: <%= Time.now.year - @player.dob.year %></li>

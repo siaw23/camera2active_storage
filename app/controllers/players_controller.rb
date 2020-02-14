@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @players = Player.order(:name)
   end
 
   # GET /players/1
@@ -42,6 +42,12 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
+    # attach_player_picture(@player, params['player']['picture'])
+
+    PictureAttachmentService.attach(@player, params['player']['player_picture'])
+
+    # binding.pry
+
     respond_to do |format|
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
@@ -72,6 +78,6 @@ class PlayersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def player_params
-    params.require(:player).permit(:dob, :pob, :age, :height, :citizenship, :position, :foot, :current_club, :contract_expires, :outfitter)
+    params.require(:player).permit(:dob, :pob, :age, :height, :citizenship, :position, :foot, :current_club, :contract_expires, :outfitter, :player_picture)
   end
 end
