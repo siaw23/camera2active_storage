@@ -48,10 +48,11 @@ document.addEventListener("turbolinks:load", function () {
 
           canvas.getContext('2d').drawImage(video, 0, 0)
 
-          var drawnImage = canvas.toDataURL('image/jpeg')
+          var dataUrl = canvas.toDataURL('image/jpeg')
 
-          document.getElementById("shot").src = drawnImage
-          hiddenPlayerPicture.value = drawnImage
+          document.getElementById("shot").src = dataUrl
+
+          hiddenPlayerPicture.value = dataUrl
 
           videdDiv.style.display = "none"
           snapButton.style.display = "none"

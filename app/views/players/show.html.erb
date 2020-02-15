@@ -15,7 +15,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">DOB: <%= @player.dob %></li>
       <li class="list-group-item">Age: <%= Time.now.year - @player.dob.year %></li>
-      <li class="list-group-item">Height: <%= @player.height %></li>
+      <li class="list-group-item">Height: <%= heightilize(@player.height) %></li>
       <li class="list-group-item">Citizenship: <%= @player.citizenship %></li>
       <li class="list-group-item">Position: <%= @player.position %></li>
       <li class="list-group-item">Foot: <%= @player.foot %></li>
