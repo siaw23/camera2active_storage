@@ -42,11 +42,7 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
-    # attach_player_picture(@player, params['player']['picture'])
-
     PictureAttachmentService.attach(@player, params['player']['player_picture'])
-
-    # binding.pry
 
     respond_to do |format|
       if @player.update(player_params)
