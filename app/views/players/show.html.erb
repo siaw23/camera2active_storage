@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 18rem;">
-    <% if @player.picture.present? %>
+    <% if @player.has_picture? %>
       <%= image_tag(@player.picture, class: "card-img-top") %>
     <% else %>
       <img class="card-img-top" src="/cat.jpg" alt="">
