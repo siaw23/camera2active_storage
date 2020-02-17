@@ -14,7 +14,7 @@
   <div class="ml-4 mb-4">
     <div class="row">
       <div class="card" style="width: 18rem;">
-        <% if @player.picture.present? %>
+        <% if @player.picture.attached? && @player.has_picture? %>
           <%= image_tag(@player.picture, class: "card-img-top", id: "shot") %>
         <% else %>
           <img class="card-img-top" src="/cat.jpg" id="shot">
